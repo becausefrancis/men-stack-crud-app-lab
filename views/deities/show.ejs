@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= deity.name %></title>
+  </head>
+  <body>
+    <h1><%= deity.name %></h1>
+
+    <% if (deity.isOlympian) { %>
+        <p>This deity is an Olympian!</p>
+    <% } else { %>
+        <p>This deity is not an Olympian!</p>
+    <% } %>
+
+    <p><i><%= deity.description %></i></p>
+
+    <form action="/deities/<%=deity._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= deity.name %></button>
+    </form>
+
+    <a href="/deities/<%= deity._id %>/edit">Edit <%= deity.name %></a>
+    <a href="/deities/">Back to Deities</a>
+  </body>
+</html>

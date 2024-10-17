@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store a Deity</title>
+  </head>
+  <body>
+    <h1>Store a New Deity!</h1>
+
+    <form action="/deities" method="POST">
+        <div>
+            <label for="name">Deity's name:</label>
+            <input type="text" name="name" id="name" required/>
+        </div>
+
+        <div>
+            <label for="isOlympian">Is this deity an Olympian?</label>
+            <input type="checkbox" name="isOlympian" id="isOlympian" />
+        </div>
+
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" required/>
+        </div>
+
+        <button type="submit">Add Deity</button>
+    </form>
+
+    <a href="/deities/">Back to Deities</a>
+  </body>
+</html>

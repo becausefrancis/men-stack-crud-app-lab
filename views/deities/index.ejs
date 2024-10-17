@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deities Index</title>
+  </head>
+  <body>
+    <h1>All Deities</h1>
+
+    <ul>
+        <% deities.forEach(deity => { %>
+            <li>
+                <a href="/deities/<%= deity._id %>">
+                    <%= deity.name %>
+                </a>
+            </li>
+        <% }); %>
+    </ul>
+
+    <a href="/deities/new">Add New Deity</a>
+  </body>
+</html>

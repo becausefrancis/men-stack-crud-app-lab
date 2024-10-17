@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit a Deity</title>
+  </head>
+  <body>
+    <h1>Edit <%= deity.name %></h1>
+
+    <form action="/deities/<%=deity._id%>?_method=PUT" method="POST">
+        <div>
+            <label for="name">Deity's name:</label>
+            <input type="text" name="name" id="name" value="<%= deity.name %>" required/>
+        </div>
+
+        <div>
+            <label for="isOlympian">Is this deity an Olympian?</label>
+            <input type="checkbox" name="isOlympian" id="isOlympian" <% if (deity.isOlympian) { %>checked<% } %> />
+        </div>
+
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" value="<%= deity.description %>" required/>
+        </div>
+
+        <button type="submit">Update Deity</button>
+    </form>
+
+    <a href="/deities/">Back to Deities</a>
+  </body>
+</html>
